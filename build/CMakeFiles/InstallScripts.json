@@ -1,0 +1,9 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Github/Real-Time-Task-Scheduler/build/cmake_install.cmake",
+		"D:/Github/Real-Time-Task-Scheduler/build/_deps/catch2-build/cmake_install.cmake",
+		"D:/Github/Real-Time-Task-Scheduler/build/_deps/catch2-build/src/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
