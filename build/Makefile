@@ -187,6 +187,33 @@ Catch2WithMain/fast:
 	$(MAKE) $(MAKESILENT) -f _deps\catch2-build\src\CMakeFiles\Catch2WithMain.dir\build.make _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/build
 .PHONY : Catch2WithMain/fast
 
+src/DynamicArray.obj: src/DynamicArray.cpp.obj
+.PHONY : src/DynamicArray.obj
+
+# target to build an object file
+src/DynamicArray.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Main.dir\build.make CMakeFiles/Main.dir/src/DynamicArray.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/DynamicArray.cpp.obj
+.PHONY : src/DynamicArray.cpp.obj
+
+src/DynamicArray.i: src/DynamicArray.cpp.i
+.PHONY : src/DynamicArray.i
+
+# target to preprocess a source file
+src/DynamicArray.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Main.dir\build.make CMakeFiles/Main.dir/src/DynamicArray.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/DynamicArray.cpp.i
+.PHONY : src/DynamicArray.cpp.i
+
+src/DynamicArray.s: src/DynamicArray.cpp.s
+.PHONY : src/DynamicArray.s
+
+# target to generate assembly for a file
+src/DynamicArray.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Main.dir\build.make CMakeFiles/Main.dir/src/DynamicArray.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/DynamicArray.cpp.s
+.PHONY : src/DynamicArray.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -249,6 +276,9 @@ help:
 	@echo ... Catch2WithMain
 	@echo ... Main
 	@echo ... Tests
+	@echo ... src/DynamicArray.obj
+	@echo ... src/DynamicArray.i
+	@echo ... src/DynamicArray.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

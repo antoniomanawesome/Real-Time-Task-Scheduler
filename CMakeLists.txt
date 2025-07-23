@@ -21,16 +21,19 @@ include_directories(src)
 include_directories(test-unit)
 
 #the first word is the name of the executble
-# everything else are the files to include - yours will probably look a bit different than mine
+# everything else are the files to include
 add_executable(Main
         src/main.cpp # your main
-        
+        src/DynamicArray.cpp
+        src/DynamicArray.h
         
         )
 
 #this one doesn't include main, instead having your test.cpp
-add_executable(Tests #this will be named Project1 by default - either change it to Tests or see the comment at the bottom of the file
+add_executable(Tests
         test/test.cpp # your test file
+        src/DynamicArray.cpp
+        src/DynamicArray.h
         
         )
         

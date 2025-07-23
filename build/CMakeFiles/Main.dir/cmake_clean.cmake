@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Main.dir/src/DynamicArray.cpp.obj"
+  "CMakeFiles/Main.dir/src/DynamicArray.cpp.obj.d"
   "CMakeFiles/Main.dir/src/main.cpp.obj"
   "CMakeFiles/Main.dir/src/main.cpp.obj.d"
   "Main.exe"
