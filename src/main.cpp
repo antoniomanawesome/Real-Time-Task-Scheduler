@@ -10,6 +10,6 @@ int main(){
     tasks.push_back(t2);
 
     std::cout << tasks.get_size();
-
+    std::cin.get();
     return 0;
 }

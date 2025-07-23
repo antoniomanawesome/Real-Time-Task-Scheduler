@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build cpp project",
+      "type": "shell",
+      "command": "g++",
+      "args": [
+        "src/main.cpp",
+        "src/DynamicArray.cpp",
+        "-o",
+        "build/arraytest.exe"
+      ],
+      "group": "build",
+      "problemMatcher": ["$gcc"],
+      "detail": "Compile C++ project"
+    }
+  ]
+}
