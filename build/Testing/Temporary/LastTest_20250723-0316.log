@@ -1,3 +1,23 @@
-Start testing: Jul 22 23:16 Eastern Daylight Time
+Start testing: Jul 22 23:19 Eastern Daylight Time
 ----------------------------------------------------------
-End testing: Jul 22 23:16 Eastern Daylight Time
+1/1 Testing: Get Size
+1/1 Test: Get Size
+Command: "D:/Github/Real-Time-Task-Scheduler/build/Tests.exe" "Get Size"
+Directory: D:/Github/Real-Time-Task-Scheduler/build
+"Get Size" start time: Jul 22 23:19 Eastern Daylight Time
+Output:
+----------------------------------------------------------
+Filters: "Get Size"
+Randomness seeded to: 2764458959
+===============================================================================
+All tests passed (1 assertion in 1 test case)
+
+<end of output>
+Test time =   0.01 sec
+----------------------------------------------------------
+Test Passed.
+"Get Size" end time: Jul 22 23:19 Eastern Daylight Time
+"Get Size" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jul 22 23:19 Eastern Daylight Time

@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "Tests.exe"
   "Tests.exe.manifest"
   "Tests.pdb"
+  "Tests_tests-b12d07c.cmake"
   "libTests.dll.a"
 )
 
