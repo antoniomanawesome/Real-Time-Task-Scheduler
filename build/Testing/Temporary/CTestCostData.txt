@@ -1,2 +1,6 @@
-Get Size 1 0.0054167
+Get Size 6 0.00557262
+Push Back 4 0.005606
+Resize 5 0.00558114
+Indexing 3 0.00600383
+Push & Index 1 0.0056945
 ---

@@ -1,7 +1,7 @@
 #include "DynamicArray.h"
 
 
-DynamicArray::DynamicArray() : size(0), capacity(8) {
+DynamicArray::DynamicArray() : size(0), capacity(4) {
     data = new Task[capacity]; // Creating a task array in the heap
 }
 
@@ -27,6 +27,10 @@ void DynamicArray::push_back(const Task& task){ // Task& is const because I don'
 
 int DynamicArray::get_size() const { //get_size() is const because we don't want to modify any of the objects member variables we just want to know what size is
     return size;
+}
+
+int DynamicArray::get_capacity() const {
+    return capacity;
 }
 
 DynamicArray::Task& DynamicArray::operator[](int index){

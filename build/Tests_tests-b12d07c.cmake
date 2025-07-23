@@ -1,3 +1,7 @@
+add_test( [==[Push & Index]==] D:/Github/Real-Time-Task-Scheduler/build/Tests.exe [==[Push & Index]==]  )
+set_tests_properties( [==[Push & Index]==] PROPERTIES WORKING_DIRECTORY D:/Github/Real-Time-Task-Scheduler/build)
 add_test( [==[Get Size]==] D:/Github/Real-Time-Task-Scheduler/build/Tests.exe [==[Get Size]==]  )
 set_tests_properties( [==[Get Size]==] PROPERTIES WORKING_DIRECTORY D:/Github/Real-Time-Task-Scheduler/build)
-set( Tests_TESTS [==[Get Size]==])
+add_test( Resize D:/Github/Real-Time-Task-Scheduler/build/Tests.exe Resize  )
+set_tests_properties( Resize PROPERTIES WORKING_DIRECTORY D:/Github/Real-Time-Task-Scheduler/build)
+set( Tests_TESTS [==[Push & Index]==] [==[Get Size]==] Resize)
