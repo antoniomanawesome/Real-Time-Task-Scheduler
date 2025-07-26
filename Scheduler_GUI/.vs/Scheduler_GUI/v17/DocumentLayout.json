@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABABAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-07-26T20:58:55.367Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
