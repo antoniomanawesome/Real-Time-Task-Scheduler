@@ -588,6 +588,33 @@ src/DynamicArray.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/DynamicArray.cpp.s
 .PHONY : src/DynamicArray.cpp.s
 
+src/Scheduler.obj: src/Scheduler.cpp.obj
+.PHONY : src/Scheduler.obj
+
+# target to build an object file
+src/Scheduler.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Main.dir\build.make CMakeFiles/Main.dir/src/Scheduler.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/Scheduler.cpp.obj
+.PHONY : src/Scheduler.cpp.obj
+
+src/Scheduler.i: src/Scheduler.cpp.i
+.PHONY : src/Scheduler.i
+
+# target to preprocess a source file
+src/Scheduler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Main.dir\build.make CMakeFiles/Main.dir/src/Scheduler.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/Scheduler.cpp.i
+.PHONY : src/Scheduler.cpp.i
+
+src/Scheduler.s: src/Scheduler.cpp.s
+.PHONY : src/Scheduler.s
+
+# target to generate assembly for a file
+src/Scheduler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Main.dir\build.make CMakeFiles/Main.dir/src/Scheduler.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/src/Scheduler.cpp.s
+.PHONY : src/Scheduler.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -682,6 +709,9 @@ help:
 	@echo ... src/DynamicArray.obj
 	@echo ... src/DynamicArray.i
 	@echo ... src/DynamicArray.s
+	@echo ... src/Scheduler.obj
+	@echo ... src/Scheduler.i
+	@echo ... src/Scheduler.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

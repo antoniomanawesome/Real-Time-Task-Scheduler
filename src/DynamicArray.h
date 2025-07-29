@@ -5,6 +5,8 @@
 
 #include <iostream>
 
+#ifndef DynamicArray_H
+#define DynamicArray_H
 
 class DynamicArray{
         
@@ -21,12 +23,13 @@ class DynamicArray{
             priority(priority), period(period), next_run_time(run_time)  {}
         };
 
-        DynamicArray();                     // Constructor: initialize array with a default capacity
-        ~DynamicArray();                    // Destructor: deallocate heap memory
-        void push_back(const Task& task);   // Add new item to the end of the array
-        int get_size() const;               // Gets the size of the array
-        int get_capacity() const;           // Gets the capacity of the array
-        Task& operator[](int index);        // Have the ability to iterate through the array
+        DynamicArray();                                     // initialize array with a default capacity
+        ~DynamicArray();                                    // deallocating heap memory
+        void push_back(const Task& task);                   // Add new item to the end of the array
+        void remove(int index);
+        int get_size() const;                               // Gets the size of the array
+        int get_capacity() const;                           // Gets the capacity of the array
+        Task& operator[](int index);                        // Have the ability to iterate through the array
 
     private:
 
@@ -35,3 +38,5 @@ class DynamicArray{
         int capacity;   // Total allocated space
         void resize();  // If size is at capacity, increase the size of the array
 };
+
+#endif

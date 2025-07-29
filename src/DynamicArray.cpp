@@ -25,6 +25,13 @@ void DynamicArray::push_back(const Task& task){ // Task& is const because I don'
     data[size++] = task; // adds the task to the next element of the array
 }
 
+void DynamicArray::remove(int index){ // After removing a task at a given index, shift rest of the data and update size
+    for(int i = index; i < size - 1; i++){
+        data[i] = data[i + 1];
+    }
+    size--;
+}
+
 int DynamicArray::get_size() const { //get_size() is const because we don't want to modify any of the objects member variables we just want to know what size is
     return size;
 }

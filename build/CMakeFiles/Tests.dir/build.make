@@ -101,23 +101,40 @@ CMakeFiles/Tests.dir/src/DynamicArray.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tests.dir/src/DynamicArray.cpp.s"
 	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Github\Real-Time-Task-Scheduler\src\DynamicArray.cpp -o CMakeFiles\Tests.dir\src\DynamicArray.cpp.s
 
+CMakeFiles/Tests.dir/src/Scheduler.cpp.obj: CMakeFiles/Tests.dir/flags.make
+CMakeFiles/Tests.dir/src/Scheduler.cpp.obj: CMakeFiles/Tests.dir/includes_CXX.rsp
+CMakeFiles/Tests.dir/src/Scheduler.cpp.obj: D:/Github/Real-Time-Task-Scheduler/src/Scheduler.cpp
+CMakeFiles/Tests.dir/src/Scheduler.cpp.obj: CMakeFiles/Tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=D:\Github\Real-Time-Task-Scheduler\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Tests.dir/src/Scheduler.cpp.obj"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Tests.dir/src/Scheduler.cpp.obj -MF CMakeFiles\Tests.dir\src\Scheduler.cpp.obj.d -o CMakeFiles\Tests.dir\src\Scheduler.cpp.obj -c D:\Github\Real-Time-Task-Scheduler\src\Scheduler.cpp
+
+CMakeFiles/Tests.dir/src/Scheduler.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Tests.dir/src/Scheduler.cpp.i"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Github\Real-Time-Task-Scheduler\src\Scheduler.cpp > CMakeFiles\Tests.dir\src\Scheduler.cpp.i
+
+CMakeFiles/Tests.dir/src/Scheduler.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Tests.dir/src/Scheduler.cpp.s"
+	C:\msys64\ucrt64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Github\Real-Time-Task-Scheduler\src\Scheduler.cpp -o CMakeFiles\Tests.dir\src\Scheduler.cpp.s
+
 # Object files for target Tests
 Tests_OBJECTS = \
 "CMakeFiles/Tests.dir/test/test.cpp.obj" \
-"CMakeFiles/Tests.dir/src/DynamicArray.cpp.obj"
+"CMakeFiles/Tests.dir/src/DynamicArray.cpp.obj" \
+"CMakeFiles/Tests.dir/src/Scheduler.cpp.obj"
 
 # External object files for target Tests
 Tests_EXTERNAL_OBJECTS =
 
 Tests.exe: CMakeFiles/Tests.dir/test/test.cpp.obj
 Tests.exe: CMakeFiles/Tests.dir/src/DynamicArray.cpp.obj
+Tests.exe: CMakeFiles/Tests.dir/src/Scheduler.cpp.obj
 Tests.exe: CMakeFiles/Tests.dir/build.make
 Tests.exe: _deps/catch2-build/src/libCatch2Maind.a
 Tests.exe: _deps/catch2-build/src/libCatch2d.a
 Tests.exe: CMakeFiles/Tests.dir/linkLibs.rsp
 Tests.exe: CMakeFiles/Tests.dir/objects1.rsp
 Tests.exe: CMakeFiles/Tests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Github\Real-Time-Task-Scheduler\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Tests.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=D:\Github\Real-Time-Task-Scheduler\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Tests.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Tests.dir\link.txt --verbose=$(VERBOSE)
 	"C:\Program Files\CMake\bin\cmake.exe" -D TEST_TARGET=Tests -D TEST_EXECUTABLE=D:/Github/Real-Time-Task-Scheduler/build/Tests.exe -D TEST_EXECUTOR= -D TEST_WORKING_DIR=D:/Github/Real-Time-Task-Scheduler/build -D TEST_SPEC= -D TEST_EXTRA_ARGS= -D TEST_PROPERTIES= -D TEST_PREFIX= -D TEST_SUFFIX= -D TEST_LIST=Tests_TESTS -D TEST_REPORTER= -D TEST_OUTPUT_DIR= -D TEST_OUTPUT_PREFIX= -D TEST_OUTPUT_SUFFIX= -D TEST_DL_PATHS= -D CTEST_FILE=D:/Github/Real-Time-Task-Scheduler/build/Tests_tests-b12d07c.cmake -P D:/Github/Real-Time-Task-Scheduler/build/_deps/catch2-src/extras/CatchAddTests.cmake
 

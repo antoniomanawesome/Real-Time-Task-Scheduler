@@ -13,6 +13,12 @@
 },
 {
   "directory": "D:/Github/Real-Time-Task-Scheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/Main.dir/includes_CXX.rsp  -Wall -Werror -g -std=gnu++14 -o CMakeFiles\\Main.dir\\src\\Scheduler.cpp.obj -c D:\\Github\\Real-Time-Task-Scheduler\\src\\Scheduler.cpp",
+  "file": "D:/Github/Real-Time-Task-Scheduler/src/Scheduler.cpp",
+  "output": "CMakeFiles/Main.dir/src/Scheduler.cpp.obj"
+},
+{
+  "directory": "D:/Github/Real-Time-Task-Scheduler/build",
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/Tests.dir/includes_CXX.rsp  -Wall -Werror -g -std=gnu++14 -o CMakeFiles\\Tests.dir\\test\\test.cpp.obj -c D:\\Github\\Real-Time-Task-Scheduler\\test\\test.cpp",
   "file": "D:/Github/Real-Time-Task-Scheduler/test/test.cpp",
   "output": "CMakeFiles/Tests.dir/test/test.cpp.obj"
@@ -22,6 +28,12 @@
   "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/Tests.dir/includes_CXX.rsp  -Wall -Werror -g -std=gnu++14 -o CMakeFiles\\Tests.dir\\src\\DynamicArray.cpp.obj -c D:\\Github\\Real-Time-Task-Scheduler\\src\\DynamicArray.cpp",
   "file": "D:/Github/Real-Time-Task-Scheduler/src/DynamicArray.cpp",
   "output": "CMakeFiles/Tests.dir/src/DynamicArray.cpp.obj"
+},
+{
+  "directory": "D:/Github/Real-Time-Task-Scheduler/build",
+  "command": "C:\\msys64\\ucrt64\\bin\\g++.exe  @CMakeFiles/Tests.dir/includes_CXX.rsp  -Wall -Werror -g -std=gnu++14 -o CMakeFiles\\Tests.dir\\src\\Scheduler.cpp.obj -c D:\\Github\\Real-Time-Task-Scheduler\\src\\Scheduler.cpp",
+  "file": "D:/Github/Real-Time-Task-Scheduler/src/Scheduler.cpp",
+  "output": "CMakeFiles/Tests.dir/src/Scheduler.cpp.obj"
 },
 {
   "directory": "D:/Github/Real-Time-Task-Scheduler/build/_deps/catch2-build/src",

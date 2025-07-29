@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Github/Real-Time-Task-Scheduler/src/DynamicArray.cpp" "CMakeFiles/Main.dir/src/DynamicArray.cpp.obj" "gcc" "CMakeFiles/Main.dir/src/DynamicArray.cpp.obj.d"
+  "D:/Github/Real-Time-Task-Scheduler/src/Scheduler.cpp" "CMakeFiles/Main.dir/src/Scheduler.cpp.obj" "gcc" "CMakeFiles/Main.dir/src/Scheduler.cpp.obj.d"
   "D:/Github/Real-Time-Task-Scheduler/src/main.cpp" "CMakeFiles/Main.dir/src/main.cpp.obj" "gcc" "CMakeFiles/Main.dir/src/main.cpp.obj.d"
   )
 

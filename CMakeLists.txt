@@ -26,6 +26,8 @@ add_executable(Main
         src/main.cpp # your main
         src/DynamicArray.cpp
         src/DynamicArray.h
+        src/Scheduler.cpp
+        src/Scheduler.h
         
         )
 
@@ -34,6 +36,8 @@ add_executable(Tests
         test/test.cpp # your test file
         src/DynamicArray.cpp
         src/DynamicArray.h
+        src/Scheduler.cpp
+        src/Scheduler.h
         
         )
         
