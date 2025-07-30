@@ -29,3 +29,27 @@ void Array_Scheduler(DynamicArray& tasks, int sim_end){
     }
 
 }
+
+void benchmark(){
+    const int NUM_TASKS = 10000;
+    const int SIM_END = 5000;
+
+    DynamicArray arrayTasks;
+
+    // ID, priority, period, next_run_time
+
+    //ARRAY VERSION
+    for(int i = 0; i < NUM_TASKS; i++){
+        arrayTasks.push_back({i, rand() % 5, rand() % SIM_END, rand() % 10});
+    }
+
+    auto start = std::chrono::high_resolution_clock::now();
+    Array_Scheduler(arrayTasks, SIM_END);
+    auto end = std::chrono::high_resolution_clock::now();
+    auto Array_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+
+    std::cout << "Array Scheduler Time: " << Array_duration << " ms" << std::endl;
+
+    //HEAP VERSION
+
+}
