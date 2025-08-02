@@ -29,7 +29,7 @@ void DynamicArray::remove(int index){ // After removing a task at a given index,
     for(int i = index; i < size - 1; i++){
         data[i] = data[i + 1];
     }
-    size--;
+    --size;
 }
 
 int DynamicArray::get_size() const { //get_size() is const because we don't want to modify any of the objects member variables we just want to know what size is
@@ -40,6 +40,6 @@ int DynamicArray::get_capacity() const {
     return capacity;
 }
 
-DynamicArray::Task& DynamicArray::operator[](int index){
+Task& DynamicArray::operator[](int index){
     return data[index];
 }

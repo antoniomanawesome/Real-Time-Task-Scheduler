@@ -1,5 +1,8 @@
 #include "Scheduler.h"
-
+#include "MinHeap.h"
+#include "Task.h"
+#include <iostream>
+#include <vector>
 void Array_Scheduler(DynamicArray& tasks, int sim_end){
     int curr_time = 0, index = 0;
     while(curr_time < sim_end){
@@ -52,4 +55,38 @@ void benchmark(){
 
     //HEAP VERSION
 
+}
+void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
+    MinHeap pq;
+    for (auto &t : tasks) {
+        pq.push(t);
+    }
+
+    int curr_time = 0;                  // declare it once
+
+    while (curr_time < sim_end) {
+        bool ran = false;
+        while (!pq.empty() && 
+               pq.top().next_run_time <= curr_time) 
+        {
+            auto task = pq.top();
+            pq.pop();
+            std::cout << "Tick " << curr_time
+                      << ": Running Task " 
+                      << task.ID << "\n";
+
+            if (task.period > 0) {
+                task.next_run_time += task.period;
+                pq.push(task);
+            }
+            ran = true;
+            break;
+        }
+
+        if (!ran)
+            std::cout << "Tick " << curr_time 
+                      << ": IDLE\n";
+
+        ++curr_time;    // use the *same* name as your declaration
+    }
 }

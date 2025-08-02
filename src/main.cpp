@@ -1,18 +1,40 @@
 #include "DynamicArray.h"
+#include "MinHeap.h"
 #include "Scheduler.h"
 #include <iostream>
+#include <vector>
 
 int main(){
-    DynamicArray tasks; // ID, priority, period, next_run_time
-    DynamicArray::Task t1(1, 2, 0, 5); // periodic task every 5 ticks
+//────────────────────────────────────────────────────────────────
+    constexpr int SIM_END = 10;   // how long we simulate for
 
-    tasks.push_back(t1);
-    tasks.push_back({2, 1, 3, 0}); // one-shot task on the third tick
-    tasks.push_back({3, 1, 1, 2}); // periodic every 2 ticks
+    //─── 1) build & run Array_Scheduler ───────────────────────────
+    DynamicArray arrayTasks;
+    // now use Task directly, not DynamicArray::Task
+    Task t1{1, 2, 0, 5};            // ID=1, pri=2, period=0, next=5
+    arrayTasks.push_back(t1);
+    arrayTasks.push_back({2, 1, 3, 0});
+    arrayTasks.push_back({3, 1, 1, 2});
 
-    Array_Scheduler(tasks, 10);
+    std::cout << "=== Array Scheduler ===\n";
+    Array_Scheduler(arrayTasks, SIM_END);
 
-    std::cin.get();
+    //─── 2) copy into a std::vector<Task> & run Heap_Scheduler ────
+    std::vector<Task> heapTasks;
+    heapTasks.reserve(arrayTasks.get_size());
+    for (int i = 0; i < arrayTasks.get_size(); ++i) {
+        heapTasks.push_back(arrayTasks[i]);
+    }
+
+    std::cout << "\n=== Heap Scheduler ===\n";
+    //auto start = std::chrono::high_resolution_clock::now();
+    Heap_Scheduler(heapTasks, SIM_END);
+    //auto end   = std::chrono::high_resolution_clock::now();
+    /*
+    auto heap_ms =
+      std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
+    */
+    //std::cout << "Heap Scheduler Time : " << heap_ms << " ms\n";
 
     return 0;
 }
