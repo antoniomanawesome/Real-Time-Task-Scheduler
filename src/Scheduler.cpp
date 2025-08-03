@@ -87,7 +87,7 @@ void benchmark(){
     Array_Scheduler(arrayTasks, SIM_END);
     auto endA   = std::chrono::high_resolution_clock::now();
     auto array_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endA - startA).count();
-    //std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
+    std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
 
     // ─── 3) Time the Heap Scheduler ───────────────────────────────────
     auto startH = std::chrono::high_resolution_clock::now();
@@ -95,7 +95,7 @@ void benchmark(){
     auto endH   = std::chrono::high_resolution_clock::now();
     auto heap_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endH - startH).count();
     std::cout << "Heap Scheduler Time : " << heap_ms << " ms\n";
-    std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
+    //std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
 }
 
 
