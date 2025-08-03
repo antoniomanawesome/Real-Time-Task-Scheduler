@@ -6,6 +6,7 @@
 #include <chrono>
 #include <cstdlib>   // for rand()
 #include <ctime>     // for time()
+#include <random>
 void Array_Scheduler(DynamicArray& tasks, int sim_end){
     int curr_time = 0, index = 0;
     while(curr_time < sim_end){
@@ -24,12 +25,13 @@ void Array_Scheduler(DynamicArray& tasks, int sim_end){
         // execute the task
         if(index != -1){
             auto &task = tasks[index];
-            std::cout << "Tick " << curr_time << ": Running Task " << task.ID << std::endl;
+            /*std::cout << "Tick " << curr_time << ": Running Task " << task.ID << std::endl;*/
+            
 
             if(task.period > 0) task.next_run_time += task.period; // if task is periodic, reschedule it
             else tasks.remove(index); // task is run, remove it from array
         }
-        else std::cout << "Tick " << curr_time << ": IDLE" << std::endl;
+       // else std::cout << "Tick " << curr_time << ": IDLE" << std::endl;
 
         curr_time++; // increment the time now that the task has been run on the time tick
     }
@@ -103,8 +105,7 @@ void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
     for (auto &t : tasks) {
         pq.push(t);
     }
-    // ─── Smoke‐test: print heap order before simulation ─────────────
-    std::cout << "-- HEAP ORDER BEFORE SIM --\n";
+    /*std::cout << "-- HEAP ORDER BEFORE SIM --\n";
     {
         MinHeap copy = pq;  
         while (!copy.empty()) {
@@ -115,7 +116,9 @@ void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
                       << " pri="  << t.priority << "\n";
         }
     }
-    std::cout << "--------------------------\n";
+    std::cout << "--------------------------\n";*/
+    // ─── Smoke‐test: print heap order before simulation ─────────────
+    
 
     for (int curr_time = 0; curr_time < sim_end; ++curr_time) {
         // ─── Debug: show what the heap thinks is next ───────────────────
@@ -134,16 +137,19 @@ void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
         if (!pq.empty() && pq.top().next_run_time <= curr_time) {
             Task task = pq.top();
             pq.pop();
-            std::cout << "Tick " << curr_time
-                      << ": Running Task " << task.ID << "\n";
-
+            /*std::cout << "Tick " << curr_time
+                      << ": Running Task " << task.ID << "\n";*/
             if (task.period > 0) {
                 task.next_run_time += task.period;
                 pq.push(task);
             }
-        } else {
+        } 
+        /*
+        else {
             std::cout << "Tick " << curr_time
                       << ": IDLE\n";
         }
+        */
     }
 }
+

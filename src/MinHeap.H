@@ -12,6 +12,11 @@ class MinHeap {
         void push(const Task& t);
         Task& top();
         void pop();
+        void build(const std::vector<Task>& init) {
+            heap = init;
+            for(int i = int(heap.size())/2 - 1; i >= 0; --i)
+                heapify_down(i);
+        }
     private:
         std::vector<Task> heap;
         void heapify_up(int idx);
