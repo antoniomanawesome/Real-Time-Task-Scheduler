@@ -3,6 +3,9 @@
 #include "Task.h"
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <cstdlib>   // for rand()
+#include <ctime>     // for time()
 void Array_Scheduler(DynamicArray& tasks, int sim_end){
     int curr_time = 0, index = 0;
     while(curr_time < sim_end){
@@ -32,8 +35,7 @@ void Array_Scheduler(DynamicArray& tasks, int sim_end){
     }
 
 }
-
-void benchmark(){
+/*void benchmark(){
     const int NUM_TASKS = 10000;
     const int SIM_END = 5000;
 
@@ -55,38 +57,93 @@ void benchmark(){
 
     //HEAP VERSION
 
+}*/
+
+void benchmark(){
+    const int NUM_TASKS = 10000;
+    const int SIM_END   = 5000;
+
+    // ─── 1) Generate one master list of random tasks ───────────────────
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
+    DynamicArray   arrayTasks;
+    std::vector<Task> heapTasks;
+    heapTasks.reserve(NUM_TASKS);
+
+    for(int i = 0; i < NUM_TASKS; ++i){
+        Task t{
+            i,                     // ID
+            std::rand() % 5,       // priority in [0..4]
+            std::rand() % SIM_END, // period in [0..SIM_END-1]
+            std::rand() % 10       // next_run_time in [0..9]
+        };
+        arrayTasks.push_back(t);
+        heapTasks.push_back(t);
+    }
+
+    // ─── 2) Time the Array Scheduler ──────────────────────────────────
+    auto startA = std::chrono::high_resolution_clock::now();
+    Array_Scheduler(arrayTasks, SIM_END);
+    auto endA   = std::chrono::high_resolution_clock::now();
+    auto array_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endA - startA).count();
+    //std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
+
+    // ─── 3) Time the Heap Scheduler ───────────────────────────────────
+    auto startH = std::chrono::high_resolution_clock::now();
+    Heap_Scheduler(heapTasks, SIM_END);
+    auto endH   = std::chrono::high_resolution_clock::now();
+    auto heap_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endH - startH).count();
+    std::cout << "Heap Scheduler Time : " << heap_ms << " ms\n";
+    std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
 }
+
+
+
 void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
     MinHeap pq;
     for (auto &t : tasks) {
         pq.push(t);
     }
+    // ─── Smoke‐test: print heap order before simulation ─────────────
+    std::cout << "-- HEAP ORDER BEFORE SIM --\n";
+    {
+        MinHeap copy = pq;  
+        while (!copy.empty()) {
+            auto t = copy.top();
+            copy.pop();
+            std::cout << "  ID=" << t.ID
+                      << " next=" << t.next_run_time
+                      << " pri="  << t.priority << "\n";
+        }
+    }
+    std::cout << "--------------------------\n";
 
-    int curr_time = 0;                  // declare it once
+    for (int curr_time = 0; curr_time < sim_end; ++curr_time) {
+        // ─── Debug: show what the heap thinks is next ───────────────────
+        /*if (!pq.empty()) {
+            const auto &peek = pq.top();
+            std::cout << "[DBG] Tick " << curr_time
+                      << "  HeapTop -> ID="   << peek.ID
+                      << " next="           << peek.next_run_time
+                      << " pri="            << peek.priority
+                      << "\n";
+        }
+*/
+     
 
-    while (curr_time < sim_end) {
-        bool ran = false;
-        while (!pq.empty() && 
-               pq.top().next_run_time <= curr_time) 
-        {
-            auto task = pq.top();
+        // ─── Run one ready task, or idle ────────────────────────────────
+        if (!pq.empty() && pq.top().next_run_time <= curr_time) {
+            Task task = pq.top();
             pq.pop();
             std::cout << "Tick " << curr_time
-                      << ": Running Task " 
-                      << task.ID << "\n";
+                      << ": Running Task " << task.ID << "\n";
 
             if (task.period > 0) {
                 task.next_run_time += task.period;
                 pq.push(task);
             }
-            ran = true;
-            break;
-        }
-
-        if (!ran)
-            std::cout << "Tick " << curr_time 
+        } else {
+            std::cout << "Tick " << curr_time
                       << ": IDLE\n";
-
-        ++curr_time;    // use the *same* name as your declaration
+        }
     }
 }

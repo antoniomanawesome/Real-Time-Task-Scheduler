@@ -3,9 +3,8 @@
 #include "Scheduler.h"
 #include <iostream>
 #include <vector>
-
-int main(){
-//────────────────────────────────────────────────────────────────
+/*int main(){
+    //────────────────────────────────────────────────────────────────
     constexpr int SIM_END = 10;   // how long we simulate for
 
     //─── 1) build & run Array_Scheduler ───────────────────────────
@@ -16,25 +15,28 @@ int main(){
     arrayTasks.push_back({2, 1, 3, 0});
     arrayTasks.push_back({3, 1, 1, 2});
 
-    std::cout << "=== Array Scheduler ===\n";
-    Array_Scheduler(arrayTasks, SIM_END);
-
-    //─── 2) copy into a std::vector<Task> & run Heap_Scheduler ────
+    //─── 2) copy into a std::vector<Task> before running array scheudler
     std::vector<Task> heapTasks;
     heapTasks.reserve(arrayTasks.get_size());
     for (int i = 0; i < arrayTasks.get_size(); ++i) {
         heapTasks.push_back(arrayTasks[i]);
     }
 
+    std::cout << "=== Array Scheduler ===\n";
+    Array_Scheduler(arrayTasks, SIM_END);
+
+    
+
     std::cout << "\n=== Heap Scheduler ===\n";
     //auto start = std::chrono::high_resolution_clock::now();
     Heap_Scheduler(heapTasks, SIM_END);
-    //auto end   = std::chrono::high_resolution_clock::now();
-    /*
-    auto heap_ms =
-      std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
-    */
-    //std::cout << "Heap Scheduler Time : " << heap_ms << " ms\n";
-
+    
+    
+    return 0;
+    
+   
+}*/
+int main(){
+    benchmark();
     return 0;
 }

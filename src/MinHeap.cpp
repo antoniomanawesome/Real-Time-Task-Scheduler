@@ -29,9 +29,17 @@ void MinHeap::pop() {
 }
 bool MinHeap::compare(int a, int b) const {
     const auto &A = heap[a], &B = heap[b];
+
+    // 1) run‐time ordering
+    if (A.next_run_time != B.next_run_time)
+        return A.next_run_time < B.next_run_time;
+
+    // 2) priority ordering
     if (A.priority != B.priority)
         return A.priority < B.priority;
-    return A.next_run_time < B.next_run_time;
+
+    // 3) tie‐break by ID so it’s 100% deterministic
+    return A.ID < B.ID;
 }
 
 void MinHeap::heapify_up(int idx) {
