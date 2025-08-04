@@ -62,7 +62,7 @@ void Array_Scheduler(DynamicArray& tasks, int sim_end){
     //HEAP VERSION
 
 }*/
-
+/*
 void benchmark(){
     const int NUM_TASKS = 10000;
     const int SIM_END   = 5000;
@@ -99,7 +99,7 @@ void benchmark(){
     std::cout << "Heap Scheduler Time : " << heap_ms << " ms\n";
 }
 
-
+*/
 
 void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
     MinHeap pq;
