@@ -18,6 +18,8 @@
 #include "Scheduler.h"
 #include <iostream>
 #include <vector>
+#include "Benchmark.h"   
+
 
 // Data
 static LPDIRECT3D9              g_pD3D = nullptr;
