@@ -188,8 +188,8 @@ CMakeFiles/Main.dir/clean:
 # Target rules for target CMakeFiles/Tests.dir
 
 # All Build rule for target.
-CMakeFiles/Tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 CMakeFiles/Tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2.dir/all
+CMakeFiles/Tests.dir/all: _deps/catch2-build/src/CMakeFiles/Catch2WithMain.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Tests.dir\build.make CMakeFiles/Tests.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=D:\Github\Real-Time-Task-Scheduler\build\CMakeFiles --progress-num=97,98,99,100 "Built target Tests"

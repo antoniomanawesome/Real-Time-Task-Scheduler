@@ -9,6 +9,7 @@
         "src/main.cpp",
         "src/DynamicArray.cpp",
         "src/Scheduler.cpp",
+        "src/MinHeap.cpp",
         "-o",
         "build/arraytest.exe"
       ],
