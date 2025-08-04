@@ -12,6 +12,13 @@
 #include <d3d9.h>
 #include <tchar.h>
 
+#include "gui.h"
+#include "DynamicArray.h"
+#include "MinHeap.h"
+#include "Scheduler.h"
+#include <iostream>
+#include <vector>
+
 // Data
 static LPDIRECT3D9              g_pD3D = nullptr;
 static LPDIRECT3DDEVICE9        g_pd3dDevice = nullptr;
@@ -35,7 +42,7 @@ int main(int, char**)
     // Create application window
     WNDCLASSEXW wc = { sizeof(wc), CS_CLASSDC, WndProc, 0L, 0L, GetModuleHandle(nullptr), nullptr, nullptr, nullptr, nullptr, L"ImGui Example", nullptr };
     ::RegisterClassExW(&wc);
-    HWND hwnd = ::CreateWindowW(wc.lpszClassName, L"Dear ImGui DirectX9 Example", WS_OVERLAPPEDWINDOW, 100, 100, (int)(1280 * main_scale), (int)(800 * main_scale), nullptr, nullptr, wc.hInstance, nullptr);
+    HWND hwnd = ::CreateWindowW(wc.lpszClassName, L"Real Time Task Scheduler Simulation", WS_OVERLAPPEDWINDOW, 100, 100, (int)(1280 * main_scale), (int)(800 * main_scale), nullptr, nullptr, wc.hInstance, nullptr);
 
     // Initialize Direct3D
     if (!CreateDeviceD3D(hwnd))
@@ -135,6 +142,21 @@ int main(int, char**)
         ImGui_ImplWin32_NewFrame();
         ImGui::NewFrame();
 
+        //Project code goes here:
+        //---------------------------------------------------------------------------
+        // 1. Display a task table to show the current task and properties
+        //  look into Horizontal scroll, column width, background color, advanced
+        // 2. Scheduler Controls panel to step through ticks or run the sim completely
+        // 3. Timeline to visualize which task ran at each tick
+        // 4. Performance Results (visualize the actual benchmarking of our two data structures)
+        // 5. Log Output (optional idk)
+        //---------------------------------------------------------------------------
+
+		gui::RenderUI();
+
+
+        //old code for the demo window
+        /*
         // 1. Show the big demo window (Most of the sample code is in ImGui::ShowDemoWindow()! You can browse its code to learn more about Dear ImGui!).
         if (show_demo_window)
             ImGui::ShowDemoWindow(&show_demo_window);
@@ -171,6 +193,8 @@ int main(int, char**)
                 show_another_window = false;
             ImGui::End();
         }
+
+        */
 
         // Rendering
         ImGui::EndFrame();

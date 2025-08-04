@@ -7,6 +7,7 @@
 #include <cstdlib>   // for rand()
 #include <ctime>     // for time()
 #include <random>
+
 void Array_Scheduler(DynamicArray& tasks, int sim_end){
     int curr_time = 0, index = 0;
     while(curr_time < sim_end){
@@ -37,6 +38,7 @@ void Array_Scheduler(DynamicArray& tasks, int sim_end){
     }
 
 }
+
 /*void benchmark(){
     const int NUM_TASKS = 10000;
     const int SIM_END = 5000;
@@ -67,7 +69,7 @@ void benchmark(){
 
     // ─── 1) Generate one master list of random tasks ───────────────────
     std::srand(static_cast<unsigned>(std::time(nullptr)));
-    DynamicArray   arrayTasks;
+    DynamicArray arrayTasks;
     std::vector<Task> heapTasks;
     heapTasks.reserve(NUM_TASKS);
 
@@ -95,7 +97,6 @@ void benchmark(){
     auto endH   = std::chrono::high_resolution_clock::now();
     auto heap_ms = std::chrono::duration_cast<std::chrono::milliseconds>(endH - startH).count();
     std::cout << "Heap Scheduler Time : " << heap_ms << " ms\n";
-    //std::cout << "Array Scheduler Time: " << array_ms << " ms\n\n";
 }
 
 

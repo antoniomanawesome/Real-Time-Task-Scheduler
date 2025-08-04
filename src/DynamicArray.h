@@ -12,8 +12,7 @@
 class DynamicArray{
         
     public:
-    
-       
+
 
         DynamicArray();                                     // initialize array with a default capacity
         ~DynamicArray();                                    // deallocating heap memory
