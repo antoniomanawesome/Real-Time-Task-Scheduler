@@ -1,3 +1,4 @@
+D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\DynamicArray.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\DynamicArray.obj
 D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\gui.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\gui.obj
 D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\imgui\backends\imgui_impl_dx9.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\imgui_impl_dx9.obj
 D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\imgui\backends\imgui_impl_win32.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\imgui_impl_win32.obj
@@ -7,3 +8,5 @@ D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\imgui\imgui_draw.cpp;D:\Github\
 D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\imgui\imgui_tables.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\imgui_tables.obj
 D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\imgui\imgui_widgets.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\imgui_widgets.obj
 D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\main.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\main.obj
+D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\MinHeap.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\MinHeap.obj
+D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler.cpp;D:\Github\Real-Time-Task-Scheduler\Scheduler_GUI\Scheduler_GUI\x64\Debug\Scheduler.obj
