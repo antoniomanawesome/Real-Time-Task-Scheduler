@@ -13,6 +13,11 @@
 #include <tchar.h>
 
 #include "gui.h"
+#include "DynamicArray.h"
+#include "MinHeap.h"
+#include "Scheduler.h"
+#include <iostream>
+#include <vector>
 
 // Data
 static LPDIRECT3D9              g_pD3D = nullptr;

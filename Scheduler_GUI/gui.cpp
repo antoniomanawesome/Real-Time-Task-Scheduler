@@ -29,6 +29,6 @@ namespace gui {
 		ImGui::Begin("Benchmark Results");
 		ImGui::End();
 
-		//ImGui::ShowDemoWindow();
+		ImGui::ShowDemoWindow();
 	}
 }
