@@ -18,8 +18,8 @@ namespace gui {
 		//After generating random tasks or adding/removing manually, want to display a table with all of the tasks.
 		//This table should have columns for Task ID, Priority, Next Run Time, and Period
 		//Want a button to add a task and randomly generate them (like we did in vscode)
-		const int NUM_TASKS = 10000;
-		const int SIM_END = 5000;
+		static int NUM_TASKS = 10000;
+		static int SIM_END = 5000;
 
 		// ─── 1) Generate one master list of random tasks ───────────────────
 		std::srand(static_cast<unsigned>(std::time(nullptr)));
@@ -39,6 +39,13 @@ namespace gui {
 		static std::string lastOutput;
 		static float lastArrayMs = 0.0f;
 		static float lastHeapMs = 0.0f;
+
+		// --- Parameter Controls Window ---
+		ImGui::Begin("Simulation Parameters");
+		ImGui::SliderInt("Number of Tasks", &NUM_TASKS, 1, 10000);
+		ImGui::SliderInt("Simulation End", &SIM_END, 1, 5000);
+		//ImGui::SliderFloat("Heap Scale", &heapScale, 1.0f, 20.0f, "%.1fx");
+		ImGui::End();
 
 		ImGui::Begin("Task Table");
 		
