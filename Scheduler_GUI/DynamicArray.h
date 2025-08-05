@@ -20,7 +20,7 @@ class DynamicArray{
         int get_size() const;                               // Gets the size of the array
         int get_capacity() const;                           // Gets the capacity of the array
         Task& operator[](int index);                        // Have the ability to iterate through the array
-
+        void clear();
     private:
 
         Task* data;     // Pointer to array in the heap

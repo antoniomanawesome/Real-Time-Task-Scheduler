@@ -43,3 +43,7 @@ int DynamicArray::get_capacity() const {
 Task& DynamicArray::operator[](int index){
     return data[index];
 }
+
+void DynamicArray::clear() {
+    size = 0;
+}

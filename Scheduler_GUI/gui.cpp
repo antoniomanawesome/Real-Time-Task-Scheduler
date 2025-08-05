@@ -3,6 +3,7 @@
 #include <sstream>
 #include <string>
 #include <iostream>
+#include <cmath> 
 
 namespace gui {
 	void RenderUI()
@@ -33,17 +34,30 @@ namespace gui {
 
 		// Flag to control table visibility
 		static bool showTaskTable = false;
+		
+
 		static std::string lastOutput;
+		static float lastArrayMs = 0.0f;
+		static float lastHeapMs = 0.0f;
 
 		ImGui::Begin("Task Table");
-		ImGui::Text("After generating/adding tasks, displays a table of all tasks before running the scheduler.");
+		
 		
 		//generates random tasks and adds them to the scheduler
 		//ImGui::Button("Add a task"); //opens a dialog to add a task (ID, priority, period, next_run_time)
-	
+		if (ImGui::Button("Add Task")) {
+			// (optional) reset your input fields to defaults whenever the dialog opens
+			inputID = 0;
+			inputPriority = 0;
+			inputPeriod = 0;
+			inputNextRun = 0;
+
+			ImGui::OpenPopup("Add Task");
+		}
 		// Random generation
 		if (ImGui::Button("Randomly Generate Tasks")) {
-			
+			// Reset containers for a fresh set
+			arrayTasks.clear();
 			heapTasks.clear();
 			
 			for (int i = 0; i < NUM_TASKS; ++i) {
@@ -80,6 +94,7 @@ namespace gui {
 				ImGui::EndTable();
 			}
 		}
+		
 
 		
 		if (ImGui::BeginPopupModal("Add Task", NULL, ImGuiWindowFlags_AlwaysAutoResize)) {
@@ -128,15 +143,23 @@ namespace gui {
 			std::cout.rdbuf(oldBuf);
 			lastOutput = oss.str();
 
+			lastArrayMs = array_ms;
+			lastHeapMs = heap_ms;
+
 		}
 		if (ImGui::Button("Timeline")) { //opens a new window showing the timeline of the simulation (which task ran at which tick)
 
 		}
-		if (ImGui::Button("Reset Simulation")) { //resets the simulation
-
+		//reset simulation
+		ImGui::SameLine();
+		if (ImGui::Button("Reset Simulation")) {
+			showTaskTable = false;
+			lastOutput.clear();
+			lastArrayMs = lastHeapMs = 0.0f;
 		}
-
 		ImGui::End();
+
+		
 
 		//Timeline
 		//Maybe we want a visual of which tasks ran at each tick (using ImDrawList)
@@ -147,12 +170,62 @@ namespace gui {
 		//Want a table showing the time difference between the Heap and the Array (or a bar chart to compare them)
 		// Benchmark Results
 		ImGui::Begin("Benchmark Results");
-		// Display captured text in a scrollable region
-		ImGui::BeginChild("ResultsScroll", ImVec2(0, 200), true);
-		ImGui::TextUnformatted(lastOutput.c_str());
-		ImGui::EndChild();
-		ImGui::End();
+		
 
+		// Results Table
+		ImGui::Text("Results Table");
+		if (ImGui::BeginTable("ResultsTable", 2, ImGuiTableFlags_Borders | ImGuiTableFlags_RowBg)) {
+			ImGui::TableSetupColumn("Scheduler");
+			ImGui::TableSetupColumn("Time (ms)");
+			ImGui::TableHeadersRow();
+			ImGui::TableNextRow();
+			ImGui::TableNextColumn(); ImGui::Text("Array");
+			ImGui::TableNextColumn(); ImGui::Text("%.1f", lastArrayMs);
+			ImGui::TableNextRow();
+			ImGui::TableNextColumn(); ImGui::Text("Heap");
+			ImGui::TableNextColumn(); ImGui::Text("%.1f", lastHeapMs);
+			ImGui::EndTable();
+		}
+
+		static float heapScale = 1.0f;
+		ImGui::SliderFloat("Heap Scale", &heapScale, 1.0f, 50.0f);
+
+		float maxT = std::max(lastArrayMs, lastHeapMs);
+		if (maxT > 0.0f) {
+			//Bar Chart
+			
+			ImGui::Text("Array Scheduler: %.1f ms", lastArrayMs);
+			//ImGui::ProgressBar(lastArrayMs / maxT, ImVec2(-1, 0), "%.1f ms");
+			ImGui::ProgressBar((lastArrayMs) / (lastArrayMs), ImVec2(-1, 0));  // always full scaled
+			ImGui::Text("Heap Scheduler: %.1f ms", lastHeapMs);
+			//ImGui::ProgressBar(lastHeapMs / maxT, ImVec2(-1, 0), "%.1f ms");
+			ImGui::ProgressBar((lastHeapMs * heapScale) / (lastArrayMs), ImVec2(-1, 0) );//scaled
+
+
+			//Histogram
+			// scaled value array
+			float rawA = lastArrayMs;
+			float rawH = lastHeapMs * heapScale;
+
+			// max bound 
+			float histMax = std::max(rawA, rawH);
+
+			// plot the scaled data
+			float histValues[2] = { rawA, rawH };
+			ImGui::Text("Timing Histogram (Heap × %.1f)", heapScale);
+			ImGui::PlotHistogram("##TimingHist", histValues, 2, 0, nullptr, 0.0f, histMax, ImVec2(-1, 80));
+			//labels
+			ImGui::Columns(2, "HistLabels");
+			ImGui::Text("Array"); ImGui::NextColumn();
+			ImGui::Text("Heap");
+			ImGui::Columns(1);
+			//Table
+			
+			
+		}
+		
+		
+		ImGui::End();
 
 		ImGui::ShowDemoWindow();
 	}
