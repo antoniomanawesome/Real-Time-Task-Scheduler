@@ -8,7 +8,8 @@
 #include <ctime>     // for time()
 #include <random>
 
-void Array_Scheduler(DynamicArray& tasks, int sim_end){
+void Array_Scheduler(DynamicArray& tasks, int sim_end, std::vector<TickCounter>& tickHistory_array){
+    tickHistory_array.clear();
     int curr_time = 0, index = 0;
     while(curr_time < sim_end){
 
@@ -27,12 +28,13 @@ void Array_Scheduler(DynamicArray& tasks, int sim_end){
         if(index != -1){
             auto &task = tasks[index];
             /*std::cout << "Tick " << curr_time << ": Running Task " << task.ID << std::endl;*/
+            tickHistory_array.push_back({curr_time, task.ID});
             
-
             if(task.period > 0) task.next_run_time += task.period; // if task is periodic, reschedule it
             else tasks.remove(index); // task is run, remove it from array
         }
        // else std::cout << "Tick " << curr_time << ": IDLE" << std::endl;
+        else tickHistory_array.push_back({curr_time, -1}); //-1 is an idle tick
 
         curr_time++; // increment the time now that the task has been run on the time tick
     }
@@ -101,7 +103,8 @@ void benchmark(){
 
 */
 
-void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
+void Heap_Scheduler(std::vector<Task>& tasks, int sim_end, std::vector<TickCounter>& tickHistory_heap) {
+    tickHistory_heap.clear();
     MinHeap pq;
     for (auto &t : tasks) {
         pq.push(t);
@@ -138,13 +141,15 @@ void Heap_Scheduler(std::vector<Task>& tasks, int sim_end) {
         if (!pq.empty() && pq.top().next_run_time <= curr_time) {
             Task task = pq.top();
             pq.pop();
+            tickHistory_heap.push_back({curr_time, task.ID});
             /*std::cout << "Tick " << curr_time
                       << ": Running Task " << task.ID << "\n";*/
             if (task.period > 0) {
                 task.next_run_time += task.period;
                 pq.push(task);
             }
-        } 
+        }
+        else tickHistory_heap.push_back({curr_time, -1});
         /*
         else {
             std::cout << "Tick " << curr_time

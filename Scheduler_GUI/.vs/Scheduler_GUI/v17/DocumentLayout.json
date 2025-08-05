@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|solutionrelative:gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\imgui\\imgui_demo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|solutionrelative:imgui\\imgui_demo.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|solutionrelative:gui.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{44253988-1421-41D2-8AC4-FAEBAAF6355D}|Scheduler_GUI.vcxproj|solutionrelative:gui.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "main.cpp",
-              "DocumentMoniker": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp",
-              "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAJQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-04T21:56:21.708Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "gui.cpp",
               "DocumentMoniker": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.cpp",
               "RelativeDocumentMoniker": "gui.cpp",
               "ToolTip": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.cpp",
               "RelativeToolTip": "gui.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-08-04T04:56:25.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "gui.h",
-              "DocumentMoniker": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.h",
-              "RelativeDocumentMoniker": "gui.h",
-              "ToolTip": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\gui.h",
-              "RelativeToolTip": "gui.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-08-03T23:04:46.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "imgui_demo.cpp",
-              "DocumentMoniker": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\imgui\\imgui_demo.cpp",
-              "RelativeDocumentMoniker": "imgui\\imgui_demo.cpp",
-              "ToolTip": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\imgui\\imgui_demo.cpp",
-              "RelativeToolTip": "imgui\\imgui_demo.cpp",
-              "ViewState": "AgIAAOUWAAAAAAAAAAApwDMWAAAkAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\Github\\Real-Time-Task-Scheduler\\Scheduler_GUI\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-08-03T22:56:13.101Z",
+              "WhenOpened": "2025-08-04T21:56:21.708Z",
               "EditorCaption": ""
             }
           ]

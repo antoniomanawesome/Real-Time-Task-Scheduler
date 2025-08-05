@@ -3,11 +3,13 @@
 
 // Made by Antonio Marrero-Acosta
 
-#include <iostream>
-#include "Task.h"
+
 
 #ifndef DynamicArray_H
 #define DynamicArray_H
+
+#include <iostream>
+#include "Task.h"
 
 class DynamicArray{
         
